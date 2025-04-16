@@ -1,1 +1,402 @@
-<p>documents-history works!</p>
+<!-- src/app/components/documents-history/documents-history.component.html -->
+<div class="tab-content">
+  <!-- Military History -->
+  <div class="form-section" [formGroup]="militaryHistoryForm">
+    <h2>Military History</h2>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="entryDateCBMPE">Entry Date</label>
+        <input type="date" id="entryDateCBMPE" formControlName="entryDateCBMPE">
+      </div>
+      <div class="form-group">
+        <label for="serviceTime">Service Time</label>
+        <input type="text" id="serviceTime" formControlName="serviceTime">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="accruedTime">Accrued Time (Days)</label>
+        <input type="number" id="accruedTime" formControlName="accruedTime">
+      </div>
+      <div class="form-group">
+        <label for="totalTime">Total Time (Days)</label>
+        <input type="number" id="totalTime" formControlName="totalTime">
+      </div>
+      <div class="form-group">
+        <label for="formattedTotalTime">Formatted Total Time</label>
+        <input type="text" id="formattedTotalTime" formControlName="formattedTotalTime">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="arrivalDateGBAPH">Arrival Date</label>
+        <input type="date" id="arrivalDateGBAPH" formControlName="arrivalDateGBAPH">
+      </div>
+      <div class="form-group">
+        <label for="spArrivalGBAPH">SP Arrival</label>
+        <input type="text" id="spArrivalGBAPH" formControlName="spArrivalGBAPH">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="lastPromotionDate">Last Promotion Date</label>
+        <input type="date" id="lastPromotionDate" formControlName="lastPromotionDate">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group checkbox-group">
+        <label class="checkbox-label">
+          <input type="checkbox" formControlName="coaph">
+          <span>COAPH</span>
+        </label>
+      </div>
+      <div class="form-group checkbox-group">
+        <label class="checkbox-label">
+          <input type="checkbox" formControlName="crv">
+          <span>CRV</span>
+        </label>
+      </div>
+      <div class="form-group checkbox-group">
+        <label class="checkbox-label">
+          <input type="checkbox" formControlName="cmr">
+          <span>CMR</span>
+        </label>
+      </div>
+      <div class="form-group checkbox-group">
+        <label class="checkbox-label">
+          <input type="checkbox" formControlName="mpmbm">
+          <span>MPMBM</span>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <!-- Address -->
+  <div class="form-section" [formGroup]="addressForm">
+    <h2>Address</h2>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="zipCode">ZIP Code</label>
+        <div class="input-with-button">
+          <input type="text" id="zipCode" formControlName="zipCode" (blur)="searchAddressByZipCode()">
+          <button type="button" class="btn-search" (click)="searchAddressByZipCode()">
+            <span class="icon">🔍</span>
+          </button>
+        </div>
+        <div class="error-message"
+             *ngIf="addressForm.get('zipCode')?.invalid &&
+                   addressForm.get('zipCode')?.touched">
+          Invalid ZIP code
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="street">Street</label>
+        <input type="text" id="street" formControlName="street">
+      </div>
+      <div class="form-group">
+        <label for="number">Number</label>
+        <input type="text" id="addressNumber" formControlName="number">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="complement">Complement</label>
+        <input type="text" id="complement" formControlName="complement">
+      </div>
+      <div class="form-group">
+        <label for="reference">Reference</label>
+        <input type="text" id="reference" formControlName="reference">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="neighborhood">Neighborhood</label>
+        <input type="text" id="neighborhood" formControlName="neighborhood">
+      </div>
+      <div class="form-group">
+        <label for="city">City</label>
+        <input type="text" id="city" formControlName="city">
+      </div>
+      <div class="form-group">
+        <label for="addressState">State</label>
+        <select id="addressState" formControlName="state">
+          <option value="">Select</option>
+          @for (state of states; track state) {
+            <option [value]="state">{{ state }}</option>
+          }
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bank Details -->
+  <div class="form-section" [formGroup]="bankDetailsForm">
+    <h2>Bank Details</h2>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="bank">Bank</label>
+        <input type="text" id="bank" formControlName="bank">
+      </div>
+      <div class="form-group">
+        <label for="branch">Branch</label>
+        <input type="text" id="branch" formControlName="branch">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="accountType">Account Type</label>
+        <select id="accountType" formControlName="accountType">
+          <option value="">Select</option>
+          <option value="Checking">Checking</option>
+          <option value="Savings">Savings</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="accountNumber">Account Number</label>
+        <input type="text" id="accountNumber" formControlName="accountNumber">
+      </div>
+      <div class="form-group">
+        <label for="digit">Check Digit</label>
+        <input type="text" id="digit" formControlName="digit">
+      </div>
+    </div>
+  </div>
+
+  <!-- Voter Registration and Driver's License -->
+  <div class="columns">
+    <div class="form-section" [formGroup]="voterRegistrationForm">
+      <h2>Voter Registration</h2>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="voterNumber">Number</label>
+          <input type="text" id="voterNumber" formControlName="number">
+        </div>
+        <div class="form-group">
+          <label for="zone">Zone</label>
+          <input type="text" id="zone" formControlName="zone">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="section">Section</label>
+          <input type="text" id="section" formControlName="section">
+        </div>
+        <div class="form-group">
+          <label for="voterState">State</label>
+          <select id="voterState" formControlName="state">
+            <option value="">Select</option>
+            @for (state of states; track state) {
+              <option [value]="state">{{ state }}</option>
+            }
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-section" [formGroup]="driversLicenseForm">
+      <h2>Driver's License</h2>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="registrationNumber">Registration Number</label>
+          <input type="text" id="registrationNumber" formControlName="registrationNumber">
+        </div>
+        <div class="form-group">
+          <label for="licenseState">State</label>
+          <select id="licenseState" formControlName="state">
+            <option value="">Select</option>
+            @for (state of states; track state) {
+              <option [value]="state">{{ state }}</option>
+            }
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="expirationDate">Expiration Date</label>
+          <input type="date" id="expirationDate" formControlName="expirationDate">
+        </div>
+        <div class="form-group">
+          <label for="category">Category</label>
+          <select id="category" formControlName="category">
+            <option value="">Select</option>
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="D">D</option>
+            <option value="E">E</option>
+            <option value="AB">AB</option>
+            <option value="AC">AC</option>
+            <option value="AD">AD</option>
+            <option value="AE">AE</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="firstLicenseDate">First License Date</label>
+          <input type="date" id="firstLicenseDate" formControlName="firstLicenseDate">
+        </div>
+        <div class="form-group">
+          <label for="issueDate">Issue Date</label>
+          <input type="date" id="issueDate" formControlName="issueDate">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Other Information -->
+  <div class="columns">
+    <div class="form-section" [formGroup]="boatLicenseForm">
+      <h2>Boat License</h2>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="boatNumber">Number</label>
+          <input type="text" id="boatNumber" formControlName="number">
+        </div>
+      </div>
+    </div>
+
+    <div class="form-section" [formGroup]="firearmForm">
+      <h2>Firearm</h2>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="sigmaNumber">SIGMA Number</label>
+          <input type="text" id="sigmaNumber" formControlName="sigmaNumber">
+        </div>
+        <div class="form-group">
+          <label for="serviceUseAuthorization">Service Use Authorization</label>
+          <input type="text" id="serviceUseAuthorization" formControlName="serviceUseAuthorization">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Measurements and Additional Information -->
+  <div class="form-section" [formGroup]="measurementsForm">
+    <h2>Measurements and Additional Information</h2>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="bloodType">Blood Type</label>
+        <select id="bloodType" formControlName="bloodType">
+          <option value="">Select</option>
+          <option value="A">A</option>
+          <option value="B">B</option>
+          <option value="AB">AB</option>
+          <option value="O">O</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="rhFactor">RH Factor</label>
+        <select id="rhFactor" formControlName="rhFactor">
+          <option value="">Select</option>
+          <option value="+">Positive (+)</option>
+          <option value="-">Negative (-)</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="headSize">Head Size</label>
+        <input type="text" id="headSize" formControlName="headSize">
+      </div>
+      <div class="form-group">
+        <label for="shoeSize">Shoe Size</label>
+        <input type="text" id="shoeSize" formControlName="shoeSize">
+      </div>
+      <div class="form-group">
+        <label for="shirtSize">Shirt Size</label>
+        <input type="text" id="shirtSize" formControlName="shirtSize">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="pantsSize">Pants Size</label>
+        <input type="text" id="pantsSize" formControlName="pantsSize">
+      </div>
+      <div class="form-group">
+        <label for="bootSize">Boot Size</label>
+        <input type="text" id="bootSize" formControlName="bootSize">
+      </div>
+      <div class="form-group">
+        <label for="shortsSize">Shorts Size</label>
+        <input type="text" id="shortsSize" formControlName="shortsSize">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="swimsuitSize">Swimsuit Size</label>
+        <input type="text" id="swimsuitSize" formControlName="swimsuitSize">
+      </div>
+      <div class="form-group">
+        <label for="swimTrunksSize">Swim Trunks Size</label>
+        <input type="text" id="swimTrunksSize" formControlName="swimTrunksSize">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group checkbox-group">
+        <label class="checkbox-label">
+          <input type="checkbox" formControlName="organDonor">
+          <span>Organ Donor</span>
+        </label>
+      </div>
+      <div class="form-group checkbox-group">
+        <label class="checkbox-label">
+          <input type="checkbox" formControlName="bloodDonor">
+          <span>Blood Donor</span>
+        </label>
+      </div>
+      <div class="form-group checkbox-group">
+        <label class="checkbox-label">
+          <input type="checkbox" formControlName="casMember">
+          <span>CAS Member</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group checkbox-group">
+        <label class="checkbox-label">
+          <input type="checkbox" formControlName="sismepeUser">
+          <span>SISMEPE User</span>
+        </label>
+      </div>
+      <div class="form-group checkbox-group">
+        <label class="checkbox-label">
+          <input type="checkbox" formControlName="accidentWithOriginCertificate">
+          <span>Accident with Origin Certificate</span>
+        </label>
+      </div>
+      <div class="form-group checkbox-group">
+        <label class="checkbox-label">
+          <input type="checkbox" formControlName="accidentWithIso">
+          <span>Accident with ISO</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group checkbox-group">
+        <label class="checkbox-label">
+          <input type="checkbox" formControlName="chronicDisease">
+          <span>Chronic Disease</span>
+        </label>
+      </div>
+      <div class="form-group checkbox-group">
+        <label class="checkbox-label">
+          <input type="checkbox" formControlName="controlledMedication">
+          <span>Controlled Medication</span>
+        </label>
+      </div>
+      <div class="form-group checkbox-group">
+        <label class="checkbox-label">
+          <input type="checkbox" formControlName="hasAllergy">
+          <span>Has Allergy</span>
+        </label>
+      </div>
+    </div>
+  </div>
+</div>

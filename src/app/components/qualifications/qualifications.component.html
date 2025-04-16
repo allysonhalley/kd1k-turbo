@@ -1,1 +1,43 @@
-<p>qualifications works!</p>
+<!-- src/app/components/qualifications/qualifications.component.html -->
+<div class="tab-content">
+  <!-- Qualifications -->
+  <div class="form-section" [formGroup]="qualificationsForm">
+    <h2>Qualifications</h2>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="courseName">Course (Qualification)</label>
+        <input type="text" id="courseName" formControlName="courseName">
+      </div>
+    </div>
+  </div>
+
+  <!-- Education -->
+  <div class="form-section" [formGroup]="educationForm">
+    <h2>Education</h2>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="educationLevel">Education Level</label>
+        <select id="educationLevel" formControlName="educationLevel">
+          <option value="">Select</option>
+          @for (level of educationLevels; track level) {
+            <option [value]="level">{{ level }}</option>
+          }
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="institution">Institution</label>
+        <input type="text" id="institution" formControlName="institution">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="course">Course</label>
+        <input type="text" id="course" formControlName="course">
+      </div>
+      <div class="form-group">
+        <label for="period">Period</label>
+        <input type="text" id="period" formControlName="period">
+      </div>
+    </div>
+  </div>
+</div>
