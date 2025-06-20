@@ -19,7 +19,7 @@
         <select id="rank" formControlName="rank">
           <option value="">Select</option>
           @for (rank of ranks; track rank) {
-            <option [value]="rank">{{ rank }}</option>
+            <option [value]="rank">{{ rank.rankAbbreviation }}</option>
           }
         </select>
       </div>

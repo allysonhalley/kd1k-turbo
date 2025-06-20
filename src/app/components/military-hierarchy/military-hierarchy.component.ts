@@ -4,6 +4,8 @@ import { Component, OnInit, Input, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MilitaryService } from '../../services/military.service';
+import {Observable} from "rxjs";
+import {MilitaryRankDTO} from "../../models/dto/military-rank.dto";
 
 @Component({
   selector: 'app-military-hierarchy',
@@ -16,18 +18,20 @@ export class MilitaryHierarchyComponent implements OnInit {
   @Input() formGroup!: FormGroup;
 
   militaryHierarchyForm!: FormGroup;
-  ranks: string[] = [];
+  ranks:  MilitaryRankDTO[] = [];
 
   private fb = inject(FormBuilder);
   private militaryService = inject(MilitaryService);
 
   ngOnInit() {
     this.initForm();
-    this.ranks = this.militaryService.getRanks();
+    this.militaryService.getRanks().subscribe({
+      next: (data) => this.ranks = data,
+      error: (err) => console.error('Erro ao buscar patentes:', err)
+    });
   }
 
   private initForm() {
-    // Initialize the military hierarchy form
     this.militaryHierarchyForm = this.fb.group({
       number: [''],
       abbreviatedRank: [''],
@@ -35,8 +39,6 @@ export class MilitaryHierarchyComponent implements OnInit {
       branch: [''],
       registrationNumber: ['', Validators.required]
     });
-
-    // Associate the sub-form to the main form
     this.formGroup.setControl('militaryHierarchy', this.militaryHierarchyForm);
   }
 }

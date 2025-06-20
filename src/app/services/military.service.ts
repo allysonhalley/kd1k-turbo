@@ -4,13 +4,16 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { MilitaryFormData } from '../models/military.model';
+import {MilitaryRankDTO} from "../models/dto/military-rank.dto";
 
 @Injectable({
   providedIn: 'root'
 })
 export class MilitaryService {
   // In production, replace with real API URL
-  private apiUrl = 'api/military';
+  private apiBaseUrl = 'api/v1';
+  private apiMilitaryUrl = this.apiBaseUrl+'/people';
+  private apiRankUrl = this.apiBaseUrl + '/ranks';
 
   constructor(private http: HttpClient) { }
 
@@ -42,12 +45,8 @@ export class MilitaryService {
   /**
    * Gets the list of military ranks
    */
-  getRanks(): string[] {
-    return [
-      'Private', 'Corporal', '3rd Sergeant', '2nd Sergeant', '1st Sergeant',
-      'Master Sergeant', 'Warrant Officer', '2nd Lieutenant', '1st Lieutenant',
-      'Captain', 'Major', 'Lieutenant Colonel', 'Colonel'
-    ];
+  getRanks(): Observable<MilitaryRankDTO[]> {
+    return this.http.get<MilitaryRankDTO[]>(this.apiRankUrl);
   }
 
   /**
