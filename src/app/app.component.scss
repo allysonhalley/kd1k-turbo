@@ -4,6 +4,27 @@
   display: block;
 }
 
+/* Customização das abas do Angular Material */
+
+:host ::ng-deep .mat-mdc-tab-label {
+  background: #2196f3; // Azul Material padrão para abas não selecionadas
+  color: #fff;
+  font-weight: 500;
+  transition: background 0.2s, color 0.2s;
+}
+
+:host ::ng-deep .mat-mdc-tab-label.mat-mdc-tab-label-active {
+  background: #fff;    // Aba ativa em branco
+  color: #003366;      // Azul escuro para o texto da aba ativa
+  font-weight: bold;
+  border-bottom: 3px solid #003366;
+}
+
+:host ::ng-deep .mat-mdc-tab-label:not(.mat-mdc-tab-label-active):hover {
+  background: #1976d2; // Azul mais escuro ao passar o mouse
+  color: #fff;
+}
+
 .tab-content {
   animation: fadeIn 0.3s ease-in-out;
 }

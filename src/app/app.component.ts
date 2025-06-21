@@ -12,6 +12,7 @@ import { QualificationsComponent } from './components/qualifications/qualificati
 import { AssignmentWorkScheduleComponent } from './components/assignment-work-schedule/assignment-work-schedule.component';
 import { DocumentsHistoryComponent } from './components/documents-history/documents-history.component';
 import { ContactDependentsComponent } from './components/contact-dependents/contact-dependents.component';
+import {MatTab, MatTabGroup, MatTabsModule} from '@angular/material/tabs';
 
 // Services
 import { MilitaryService } from './services/military.service';
@@ -31,7 +32,10 @@ import { MilitaryFormData } from './models/military.model';
     QualificationsComponent,
     AssignmentWorkScheduleComponent,
     DocumentsHistoryComponent,
-    ContactDependentsComponent
+    ContactDependentsComponent,
+    MatTabsModule,
+    MatTabGroup,
+    MatTab
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']

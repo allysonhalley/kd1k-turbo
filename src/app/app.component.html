@@ -1,63 +1,27 @@
-<!-- src/app/app.component.html -->
 <div class="container">
   <h1>Military Personnel Registration Form</h1>
 
   <form [formGroup]="militaryForm">
-    <!-- Navigation tabs -->
-    <div class="tabs">
-      <div class="tab-item" [class.active]="activeTab === 1" (click)="changeTab(1)">
-        Personal Data
-      </div>
-      <div class="tab-item" [class.active]="activeTab === 2" (click)="changeTab(2)">
-        Military Hierarchy
-      </div>
-      <div class="tab-item" [class.active]="activeTab === 3" (click)="changeTab(3)">
-        Qualifications
-      </div>
-      <div class="tab-item" [class.active]="activeTab === 4" (click)="changeTab(4)">
-        Assignment & Schedule
-      </div>
-      <div class="tab-item" [class.active]="activeTab === 5" (click)="changeTab(5)">
-        Documents & History
-      </div>
-      <div class="tab-item" [class.active]="activeTab === 6" (click)="changeTab(6)">
-        Contacts & Dependents
-      </div>
-    </div>
-
-    <!-- Components for each tab -->
-    <div [ngSwitch]="activeTab">
-      <app-personal-data
-        *ngSwitchCase="1"
-        [formGroup]="militaryForm">
-      </app-personal-data>
-
-      <app-military-hierarchy
-        *ngSwitchCase="2"
-        [formGroup]="militaryForm">
-      </app-military-hierarchy>
-
-      <app-qualifications
-        *ngSwitchCase="3"
-        [formGroup]="militaryForm">
-      </app-qualifications>
-
-      <app-assignment-work-schedule
-        *ngSwitchCase="4"
-        [formGroup]="militaryForm">
-      </app-assignment-work-schedule>
-
-      <app-documents-history
-        *ngSwitchCase="5"
-        [formGroup]="militaryForm">
-      </app-documents-history>
-
-      <app-contact-dependents
-        *ngSwitchCase="6"
-        [formGroup]="militaryForm"
-        [dependents]="dependents">
-      </app-contact-dependents>
-    </div>
+    <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">
+      <mat-tab label="Person">
+        <app-personal-data [formGroup]="militaryForm"></app-personal-data>
+      </mat-tab>
+      <mat-tab label="Military Hierarchy">
+        <app-military-hierarchy [formGroup]="militaryForm"></app-military-hierarchy>
+      </mat-tab>
+      <mat-tab label="Qualifications">
+        <app-qualifications [formGroup]="militaryForm"></app-qualifications>
+      </mat-tab>
+      <mat-tab label="Assignment & Schedule">
+        <app-assignment-work-schedule [formGroup]="militaryForm"></app-assignment-work-schedule>
+      </mat-tab>
+      <mat-tab label="Documents & History">
+        <app-documents-history [formGroup]="militaryForm"></app-documents-history>
+      </mat-tab>
+      <mat-tab label="Contacts & Dependents">
+        <app-contact-dependents [formGroup]="militaryForm" [dependents]="dependents"></app-contact-dependents>
+      </mat-tab>
+    </mat-tab-group>
 
     <!-- Action buttons -->
     <div class="actions">
