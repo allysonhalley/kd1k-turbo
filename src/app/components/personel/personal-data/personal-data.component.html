@@ -1,0 +1,65 @@
+<!-- src/app/components/personal-data/personal-data.component.html -->
+<div class="tab-content">
+  <!-- Personal Data -->
+  <div class="form-section" [formGroup]="formGroup">
+    <h2>Personal Data</h2>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="fullName">Full Name <span class="required">*</span></label>
+        <input type="text" id="fullName" formControlName="fullName">
+        <div class="error-message"
+              *ngIf="formGroup.get('fullName')?.invalid &&
+                    formGroup.get('fullName')?.touched">
+          Full name is required
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="militaryName">Military Name <span class="required">*</span></label>
+        <input type="text" id="militaryName" formControlName="militaryName">
+        <div class="error-message"
+              *ngIf="formGroup.get('militaryName')?.invalid &&
+                    formGroup.get('militaryName')?.touched">
+          Military name is required
+        </div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="ssn">SSN <span class="required">*</span></label>
+        <input type="text" id="ssn" formControlName="ssn">
+        <div class="error-message"
+              *ngIf="formGroup.get('ssn')?.invalid &&
+                    formGroup.get('ssn')?.touched">
+          Invalid SSN (enter numbers only)
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="birthDate">Birth Date</label>
+        <input type="date" id="birthDate" formControlName="birthDate">
+      </div>
+      <div class="form-group">
+        <label for="maritalStatus">Marital Status</label>
+        <select id="maritalStatus" formControlName="maritalStatus">
+          <option value="">Select</option>
+          <ng-container *ngFor="let status of maritalStatuses">
+            <option [value]="status">{{ status }}</option>
+          </ng-container>
+        </select>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="gender">Gender</label>
+        <select id="gender" formControlName="gender">
+          <option value="">Select</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="religion">Religion</label>
+        <input type="text" id="religion" formControlName="religion">
+      </div>
+    </div>
+  </div>
+</div>

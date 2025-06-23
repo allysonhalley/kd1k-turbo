@@ -6,7 +6,7 @@ import { ReactiveFormsModule, FormBuilder, FormGroup, FormArray } from '@angular
 import { HttpClientModule } from '@angular/common/http';
 
 // Components
-import { PersonalDataComponent } from './components/personal-data/personal-data.component';
+import { PersonelComponent } from './components/personel/personel.component';
 import { MilitaryHierarchyComponent } from './components/military-hierarchy/military-hierarchy.component';
 import { QualificationsComponent } from './components/qualifications/qualifications.component';
 import { AssignmentWorkScheduleComponent } from './components/assignment-work-schedule/assignment-work-schedule.component';
@@ -27,7 +27,7 @@ import { MilitaryFormData } from './models/military.model';
     CommonModule,
     ReactiveFormsModule,
     HttpClientModule,
-    PersonalDataComponent,
+    PersonelComponent,
     MilitaryHierarchyComponent,
     QualificationsComponent,
     AssignmentWorkScheduleComponent,

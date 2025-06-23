@@ -1,0 +1,33 @@
+<!-- Military Identity -->
+<div class="form-section" [formGroup]="formGroup">
+  <h2>Military Identity</h2>
+  <div class="form-row">
+    <div class="form-group">
+      <label for="number">Number</label>
+      <input type="text" id="number" formControlName="number">
+    </div>
+    <div class="form-group">
+      <label for="issuingAuthority">Issuing Authority</label>
+      <input type="text" id="issuingAuthority" formControlName="issuingAuthority">
+    </div>
+    <div class="form-group">
+      <label for="state">State</label>
+      <select id="state" formControlName="state">
+        <option value="">Select</option>
+        <ng-container *ngFor="let state of states">
+          <option [value]="state">{{ state }}</option>
+        </ng-container>
+      </select>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group">
+      <label for="issueDate">Issue Date</label>
+      <input type="date" id="issueDate" formControlName="issueDate">
+    </div>
+    <div class="form-group">
+      <label for="expirationDate">Expiration Date</label>
+      <input type="date" id="expirationDate" formControlName="expirationDate">
+    </div>
+  </div>
+</div>

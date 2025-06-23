@@ -1,0 +1,29 @@
+<div class="container">
+  <form [formGroup]="militaryForm">
+    <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">
+      <mat-tab label="Personal Data">
+        <app-personal-data
+          *ngIf="militaryForm.get('personalData') as personalDataGroup"
+          [formGroup]="$any(personalDataGroup)"
+          [maritalStatuses]="maritalStatuses">
+        </app-personal-data>
+
+      </mat-tab>
+      <mat-tab label="Military Hierarchy">
+        <app-military-identity
+          *ngIf="militaryForm.get('militaryIdentity') as militaryIdentityGroup"
+          [formGroup]="$any(militaryIdentityGroup)">
+        </app-military-identity>
+      </mat-tab>
+      <mat-tab label="Family">
+        <app-family
+          *ngIf="militaryForm.get('family') as familyGroup"
+          [formGroup]="$any(familyGroup)"
+          [states]="states">
+        </app-family>
+
+      </mat-tab>
+    </mat-tab-group>
+  </form>
+</div>
+

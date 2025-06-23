@@ -1,10 +1,8 @@
 <div class="container">
-  <h1>Military Personnel Registration Form</h1>
-
   <form [formGroup]="militaryForm">
     <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">
       <mat-tab label="Person">
-        <app-personal-data [formGroup]="militaryForm"></app-personal-data>
+        <app-personel [formGroup]="militaryForm"></app-personel>
       </mat-tab>
       <mat-tab label="Military Hierarchy">
         <app-military-hierarchy [formGroup]="militaryForm"></app-military-hierarchy>
