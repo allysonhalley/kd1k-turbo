@@ -2,39 +2,38 @@
 <div class="tab-content">
   <!-- Contact -->
   <div class="form-section" [formGroup]="contactForm">
-    <h2>Contact</h2>
+    <h2>{{ 'PERSONNEL.CONTACT.TITLE' | translate }}</h2>
     <div class="form-row">
       <div class="form-group">
-        <label for="email">Email</label>
+        <label for="email">{{ 'PERSONNEL.CONTACT.EMAIL' | translate }}</label>
         <input type="email" id="email" formControlName="email">
-        <div class="error-message"
-              *ngIf="contactForm.get('email')?.invalid &&
+        <div class="error-message" *ngIf="contactForm.get('email')?.invalid &&
                     contactForm.get('email')?.touched">
-          Invalid email
+          {{ 'ERRORS.INVALID_EMAIL' | translate }}
         </div>
       </div>
       <div class="form-group">
-        <label for="phone1">Phone 1</label>
+        <label for="phone1">{{ 'PERSONNEL.CONTACT.PHONE' | translate }} 1</label>
         <input type="tel" id="phone1" formControlName="phone1">
       </div>
     </div>
     <div class="form-row">
       <div class="form-group">
-        <label for="phone2">Phone 2</label>
+        <label for="phone2">{{ 'PERSONNEL.CONTACT.PHONE' | translate }} 2</label>
         <input type="tel" id="phone2" formControlName="phone2">
       </div>
       <div class="form-group">
-        <label for="phone3">Phone 3</label>
+        <label for="phone3">{{ 'PERSONNEL.CONTACT.PHONE' | translate }} 3</label>
         <input type="tel" id="phone3" formControlName="phone3">
       </div>
     </div>
     <div class="form-row">
       <div class="form-group">
-        <label for="spouse">Spouse</label>
+        <label for="spouse">{{ 'PERSONNEL.CONTACT.SPOUSE' | translate }}</label>
         <input type="text" id="spouse" formControlName="spouse">
       </div>
       <div class="form-group">
-        <label for="spouseBirthDate">Spouse Birth Date</label>
+        <label for="spouseBirthDate">{{ 'PERSONNEL.CONTACT.SPOUSE_BIRTH_DATE' | translate }}</label>
         <input type="date" id="spouseBirthDate" formControlName="spouseBirthDate">
       </div>
     </div>
@@ -42,36 +41,36 @@
 
   <!-- Dependents -->
   <div class="form-section">
-    <h2>Dependents</h2>
+    <h2>{{ 'PERSONNEL.DEPENDENTS.TITLE' | translate }}</h2>
     <div class="dependents-container">
       @for (dependent of dependents.controls; track $index) {
-        <div class="dependente-item" [formGroup]="$any(dependent)">
-          <div class="form-row">
-            <div class="form-group">
-              <label [for]="'dependentName' + $index">Name <span class="required">*</span></label>
-              <input type="text" [id]="'dependentName' + $index" formControlName="name">
-              <div class="error-message"
-                  *ngIf="dependent.get('name')?.invalid &&
+      <div class="dependente-item" [formGroup]="$any(dependent)">
+        <div class="form-row">
+          <div class="form-group">
+            <label [for]="'dependentName' + $index">{{ 'PERSONNEL.DEPENDENTS.NAME' | translate }} <span
+                class="required">*</span></label>
+            <input type="text" [id]="'dependentName' + $index" formControlName="name">
+            <div class="error-message" *ngIf="dependent.get('name')?.invalid &&
                         dependent.get('name')?.touched">
-                Dependent name is required
-              </div>
-            </div>
-            <div class="form-group">
-              <label [for]="'dependentBirthDate' + $index">Birth Date</label>
-              <input type="date" [id]="'dependentBirthDate' + $index" formControlName="birthDate">
-            </div>
-            <div class="form-group action-group">
-              <button type="button" class="btn-remove" (click)="removeDependent($index)" aria-label="Remove dependent">
-                <span class="icon">✖</span>
-              </button>
+              {{ 'ERRORS.DEPENDENT_NAME_REQUIRED' | translate }}
             </div>
           </div>
+          <div class="form-group">
+            <label [for]="'dependentBirthDate' + $index">{{ 'PERSONNEL.DEPENDENTS.BIRTH_DATE' | translate }}</label>
+            <input type="date" [id]="'dependentBirthDate' + $index" formControlName="birthDate">
+          </div>
+          <div class="form-group action-group">
+            <button type="button" class="btn-remove" (click)="removeDependent($index)" aria-label="Remove dependent">
+              <span class="icon">✖</span>
+            </button>
+          </div>
         </div>
+      </div>
       }
 
       <div class="add-dependent">
         <button type="button" class="btn-add" (click)="addDependent()">
-          <span class="icon">+</span> Add Dependent
+          <span class="icon">+</span> {{ 'BUTTONS.ADD_DEPENDENT' | translate }}
         </button>
       </div>
     </div>

@@ -1,16 +1,17 @@
 // src/app/components/military-hierarchy/military-hierarchy.component.ts
 
 import { Component, OnInit, Input, inject } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MilitaryService } from '../../services/military.service';
-import {Observable} from "rxjs";
-import {MilitaryRankDTO} from "../../models/dto/military-rank.dto";
+import { Observable } from "rxjs";
+import { MilitaryRankDTO } from "../../models/dto/military-rank.dto";
 
 @Component({
   selector: 'app-military-hierarchy',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, TranslateModule],
   templateUrl: './military-hierarchy.component.html',
   styleUrls: ['./military-hierarchy.component.scss']
 })
@@ -18,7 +19,7 @@ export class MilitaryHierarchyComponent implements OnInit {
   @Input() formGroup!: FormGroup;
 
   militaryHierarchyForm!: FormGroup;
-  ranks:  MilitaryRankDTO[] = [];
+  ranks: MilitaryRankDTO[] = [];
 
   private fb = inject(FormBuilder);
   private militaryService = inject(MilitaryService);

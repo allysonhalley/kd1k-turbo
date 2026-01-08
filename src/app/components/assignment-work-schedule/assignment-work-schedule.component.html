@@ -2,10 +2,10 @@
 <div class="tab-content">
   <!-- Assignment -->
   <div class="form-section" [formGroup]="assignmentForm">
-    <h2>Assignment</h2>
+    <h2>{{ 'PERSONNEL.ASSIGNMENT.TITLE' | translate }}</h2>
     <div class="form-row">
       <div class="form-group">
-        <label for="location">Location</label>
+        <label for="location">{{ 'PERSONNEL.ASSIGNMENT.LOCATION' | translate }}</label>
         <input type="text" id="location" formControlName="location">
       </div>
     </div>
@@ -13,22 +13,22 @@
 
   <!-- Work Schedule -->
   <div class="form-section" [formGroup]="workScheduleForm">
-    <h2>Work Schedule</h2>
+    <h2>{{ 'PERSONNEL.WORK_SCHEDULE.TITLE' | translate }}</h2>
     <div class="form-row">
       <div class="form-group">
-        <label for="schedule">Schedule</label>
+        <label for="schedule">{{ 'PERSONNEL.WORK_SCHEDULE.SCHEDULE' | translate }}</label>
         <input type="text" id="schedule" formControlName="schedule">
       </div>
       <div class="form-group checkbox-group">
         <label class="checkbox-label">
           <input type="checkbox" formControlName="reducedWorkload">
-          <span>Reduced Workload</span>
+          <span>{{ 'PERSONNEL.WORK_SCHEDULE.REDUCED_WORKLOAD' | translate }}</span>
         </label>
       </div>
       <div class="form-group checkbox-group">
         <label class="checkbox-label">
           <input type="checkbox" formControlName="readapted">
-          <span>Readapted</span>
+          <span>{{ 'PERSONNEL.WORK_SCHEDULE.READAPTED' | translate }}</span>
         </label>
       </div>
     </div>

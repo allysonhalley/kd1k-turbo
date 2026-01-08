@@ -1,0 +1,64 @@
+<!-- src/app/components/personal-data/personal-data.component.html -->
+<div class="tab-content">
+  <!-- Personal Data -->
+  <div class="form-section" [formGroup]="formGroup">
+    <h2>{{ 'PERSONNEL.PERSONAL_DATA.PERSONAL_DATA' | translate }}</h2>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="fullName">{{ 'PERSONNEL.PERSONAL_DATA.FULL_NAME' | translate }} <span
+            class="required">*</span></label>
+        <input type="text" id="fullName" formControlName="fullName">
+        <div class="error-message" *ngIf="formGroup.get('fullName')?.invalid &&
+                    formGroup.get('fullName')?.touched">
+          {{ 'ERRORS.FULL_NAME_REQUIRED' | translate }}
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="militaryName">{{ 'PERSONNEL.PERSONAL_DATA.MILITARY_NAME' | translate }} <span
+            class="required">*</span></label>
+        <input type="text" id="militaryName" formControlName="militaryName">
+        <div class="error-message" *ngIf="formGroup.get('militaryName')?.invalid &&
+                    formGroup.get('militaryName')?.touched">
+          {{ 'ERRORS.MILITARY_NAME_REQUIRED' | translate }}
+        </div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="ssn">{{ 'PERSONNEL.PERSONAL_DATA.SSN' | translate }} <span class="required">*</span></label>
+        <input type="text" id="ssn" formControlName="ssn">
+        <div class="error-message" *ngIf="formGroup.get('ssn')?.invalid &&
+                    formGroup.get('ssn')?.touched">
+          {{ 'ERRORS.INVALID_SSN' | translate }}
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="birthDate">{{ 'PERSONNEL.PERSONAL_DATA.BIRTH_DATE' | translate }}</label>
+        <input type="date" id="birthDate" formControlName="birthDate">
+      </div>
+      <div class="form-group">
+        <label for="maritalStatus">{{ 'PERSONNEL.PERSONAL_DATA.MARITAL_STATUS' | translate }}</label>
+        <select id="maritalStatus" formControlName="maritalStatus">
+          <option value="">{{ 'COMMON.SELECT' | translate }}</option>
+          <ng-container *ngFor="let status of maritalStatuses">
+            <option [value]="status">{{ status }}</option>
+          </ng-container>
+        </select>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="gender">{{ 'PERSONNEL.PERSONAL_DATA.GENDER' | translate }}</label>
+        <select id="gender" formControlName="gender">
+          <option value="">{{ 'COMMON.SELECT' | translate }}</option>
+          <option value="Male">{{ 'GENDER.MALE' | translate }}</option>
+          <option value="Female">{{ 'GENDER.FEMALE' | translate }}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="religion">{{ 'PERSONNEL.PERSONAL_DATA.RELIGION' | translate }}</label>
+        <input type="text" id="religion" formControlName="religion">
+      </div>
+    </div>
+  </div>
+</div>

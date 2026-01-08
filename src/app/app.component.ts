@@ -2,17 +2,18 @@
 
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { ReactiveFormsModule, FormBuilder, FormGroup, FormArray } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 // Components
-import { PersonelComponent } from './components/personel/personel.component';
+import { PersonnelComponent } from './components/personnel/personnel.component';
 import { MilitaryHierarchyComponent } from './components/military-hierarchy/military-hierarchy.component';
 import { QualificationsComponent } from './components/qualifications/qualifications.component';
 import { AssignmentWorkScheduleComponent } from './components/assignment-work-schedule/assignment-work-schedule.component';
 import { DocumentsHistoryComponent } from './components/documents-history/documents-history.component';
 import { ContactDependentsComponent } from './components/contact-dependents/contact-dependents.component';
-import {MatTab, MatTabGroup, MatTabsModule} from '@angular/material/tabs';
+import { MatTab, MatTabGroup, MatTabsModule } from '@angular/material/tabs';
 
 // Services
 import { MilitaryService } from './services/military.service';
@@ -25,9 +26,10 @@ import { MilitaryFormData } from './models/military.model';
   standalone: true,
   imports: [
     CommonModule,
+    TranslateModule,
     ReactiveFormsModule,
     HttpClientModule,
-    PersonelComponent,
+    PersonnelComponent,
     MilitaryHierarchyComponent,
     QualificationsComponent,
     AssignmentWorkScheduleComponent,
@@ -48,8 +50,13 @@ export class AppComponent {
 
   private fb = inject(FormBuilder);
   private militaryService = inject(MilitaryService);
+  private translate = inject(TranslateService);
 
   constructor() {
+    this.translate.addLangs(['en', 'pt-br']);
+    this.translate.setDefaultLang('pt-br');
+    this.translate.use('pt-br');
+
     this.militaryForm = this.fb.group({
       personalData: this.fb.group({}),
       militaryIdentity: this.fb.group({}),
@@ -98,7 +105,7 @@ export class AppComponent {
       });
     } else {
       this.markFormGroupTouched(this.militaryForm);
-      alert('Please fill in all required fields.');
+      alert(this.translate.instant('ALERTS.FILL_REQUIRED'));
     }
   }
 

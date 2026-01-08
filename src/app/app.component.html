@@ -1,30 +1,30 @@
 <div class="container">
   <form [formGroup]="militaryForm">
     <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">
-      <mat-tab label="Person">
-        <app-personel [formGroup]="militaryForm"></app-personel>
+      <mat-tab [label]="'TABS.PERSON' | translate">
+        <app-personnel [formGroup]="militaryForm"></app-personnel>
       </mat-tab>
-      <mat-tab label="Military Hierarchy">
+      <mat-tab [label]="'TABS.MILITARY_HIERARCHY' | translate">
         <app-military-hierarchy [formGroup]="militaryForm"></app-military-hierarchy>
       </mat-tab>
-      <mat-tab label="Qualifications">
+      <mat-tab [label]="'TABS.QUALIFICATIONS' | translate">
         <app-qualifications [formGroup]="militaryForm"></app-qualifications>
       </mat-tab>
-      <mat-tab label="Assignment & Schedule">
+      <mat-tab [label]="'TABS.ASSIGNMENT_SCHEDULE' | translate">
         <app-assignment-work-schedule [formGroup]="militaryForm"></app-assignment-work-schedule>
       </mat-tab>
-      <mat-tab label="Documents & History">
+      <mat-tab [label]="'TABS.DOCUMENTS_HISTORY' | translate">
         <app-documents-history [formGroup]="militaryForm"></app-documents-history>
       </mat-tab>
-      <mat-tab label="Contacts & Dependents">
+      <mat-tab [label]="'TABS.CONTACTS_DEPENDENTS' | translate">
         <app-contact-dependents [formGroup]="militaryForm" [dependents]="dependents"></app-contact-dependents>
       </mat-tab>
     </mat-tab-group>
 
     <!-- Action buttons -->
     <div class="actions">
-      <button type="button" class="secondary" (click)="clearForm()">Clear</button>
-      <button type="button" (click)="submitForm()">Submit</button>
+      <button type="button" class="secondary" (click)="clearForm()">{{ 'BUTTONS.CLEAR' | translate }}</button>
+      <button type="button" (click)="submitForm()">{{ 'BUTTONS.SUBMIT' | translate }}</button>
     </div>
 
     <!-- JSON result display -->

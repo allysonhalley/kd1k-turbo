@@ -1,0 +1,189 @@
+{
+    "HELLO": "Olá Mundo!",
+    "TABS": {
+        "PERSON": "Dados Pessoais",
+        "MILITARY_HIERARCHY": "Hierarquia Militar",
+        "PERSONAL_DATA": "Dados Pessoais",
+        "FAMILY": "Família",
+        "QUALIFICATIONS": "Qualificações",
+        "ASSIGNMENT_SCHEDULE": "Atribuição e Escala",
+        "DOCUMENTS_HISTORY": "Documentos e Histórico",
+        "CONTACTS_DEPENDENTS": "Contatos e Dependentes"
+    },
+    "BUTTONS": {
+        "CLEAR": "Limpar",
+        "SUBMIT": "Salvar"
+    },
+    "PERSONNEL": {
+        "PERSONAL_DATA": {
+            "PERSONAL_DATA": "Dados Pessoais",
+            "FULL_NAME": "Nome Completo",
+            "MILITARY_NAME": "Nome de Guerra",
+            "SSN": "SSN",
+            "BIRTH_DATE": "Data de Nascimento",
+            "MARITAL_STATUS": "Estado Civil",
+            "GENDER": "Gênero",
+            "RELIGION": "Religião"
+        },
+        "MILITARY_IDENTITY": {
+            "TITLE": "Identidade Militar",
+            "NUMBER": "Número",
+            "ISSUING_AUTHORITY": "Órgão Emissor",
+            "STATE": "UF",
+            "ISSUE_DATE": "Data de Emissão",
+            "EXPIRATION_DATE": "Data de Validade"
+        },
+        "FAMILY": {
+            "TITLE": "Família",
+            "MOTHER_NAME": "Nome da Mãe",
+            "FATHER_NAME": "Nome do Pai",
+            "NATIONALITY": "Nacionalidade",
+            "BIRTHPLACE": "Naturalidade",
+            "STATE": "UF"
+        },
+        "MILITARY_HIERARCHY": {
+            "TITLE": "Hierarquia Militar",
+            "NUMBER": "Número",
+            "ABBREVIATED_RANK": "Posto/Graduação (Abreviado)",
+            "RANK": "Posto/Graduação",
+            "BRANCH": "Arma/Quadro/Serviço",
+            "REGISTRATION_NUMBER": "Matrícula"
+        },
+        "QUALIFICATIONS": {
+            "TITLE": "Qualificações",
+            "COURSE_NAME": "Curso (Qualificação)"
+        },
+        "EDUCATION": {
+            "TITLE": "Escolaridade",
+            "LEVEL": "Nível de Escolaridade",
+            "INSTITUTION": "Instituição",
+            "COURSE": "Curso",
+            "PERIOD": "Período"
+        },
+        "ASSIGNMENT": {
+            "TITLE": "Atribuição",
+            "LOCATION": "Localização"
+        },
+        "WORK_SCHEDULE": {
+            "TITLE": "Escala de Trabalho",
+            "SCHEDULE": "Escala",
+            "REDUCED_WORKLOAD": "Carga Horária Reduzida",
+            "READAPTED": "Readaptado"
+        },
+        "MILITARY_HISTORY": {
+            "TITLE": "Histórico Militar",
+            "ENTRY_DATE": "Data de Ingresso",
+            "SERVICE_TIME": "Tempo de Serviço",
+            "ACCRUED_TIME": "Tempo Averbado (Dias)",
+            "TOTAL_TIME": "Tempo Total (Dias)",
+            "FORMATTED_TOTAL_TIME": "Tempo Total Formatado",
+            "ARRIVAL_DATE": "Data de Chegada",
+            "SP_ARRIVAL": "Chegada SP",
+            "LAST_PROMOTION_DATE": "Última Promoção",
+            "COAPH": "COAPH",
+            "CRV": "CRV",
+            "CMR": "CMR",
+            "MPMBM": "MPMBM"
+        },
+        "ADDRESS": {
+            "TITLE": "Endereço",
+            "ZIP_CODE": "CEP",
+            "STREET": "Rua",
+            "NUMBER": "Número",
+            "COMPLEMENT": "Complemento",
+            "REFERENCE": "Referência",
+            "NEIGHBORHOOD": "Bairro",
+            "CITY": "Cidade",
+            "STATE": "UF"
+        },
+        "BANK_DETAILS": {
+            "TITLE": "Dados Bancários",
+            "BANK": "Banco",
+            "BRANCH": "Agência",
+            "ACCOUNT_TYPE": "Tipo de Conta",
+            "ACCOUNT_NUMBER": "Conta",
+            "CHECK_DIGIT": "Dígito",
+            "CHECKING": "Corrente",
+            "SAVINGS": "Poupança"
+        },
+        "VOTER_REGISTRATION": {
+            "TITLE": "Título de Eleitor",
+            "NUMBER": "Número",
+            "ZONE": "Zona",
+            "SECTION": "Seção",
+            "STATE": "UF"
+        },
+        "DRIVERS_LICENSE": {
+            "TITLE": "CNH",
+            "REGISTRATION_NUMBER": "Registro",
+            "STATE": "UF",
+            "EXPIRATION_DATE": "Validade",
+            "CATEGORY": "Categoria",
+            "FIRST_LICENSE_DATE": "Primeira Habilitação",
+            "ISSUE_DATE": "Emissão"
+        },
+        "BOAT_LICENSE": {
+            "TITLE": "Arrais Amador",
+            "NUMBER": "Número"
+        },
+        "FIREARM": {
+            "TITLE": "Arma de Fogo",
+            "SIGMA_NUMBER": "Nº SIGMA",
+            "SERVICE_USE_AUTHORIZATION": "Autorização Carga"
+        },
+        "MEASUREMENTS": {
+            "TITLE": "Medidas e Informações Adicionais",
+            "BLOOD_TYPE": "Tipo Sanguíneo",
+            "RH_FACTOR": "Fator RH",
+            "POSITIVE": "Positivo (+)",
+            "NEGATIVE": "Negativo (-)",
+            "HEAD_SIZE": "Cobertura",
+            "SHOE_SIZE": "Calçado",
+            "SHIRT_SIZE": "Camisa",
+            "PANTS_SIZE": "Calça",
+            "BOOT_SIZE": "Coturno",
+            "SHORTS_SIZE": "Short",
+            "SWIMSUIT_SIZE": "Sunga",
+            "SWIM_TRUNKS_SIZE": "Calção de Banho",
+            "ORGAN_DONOR": "Doador de Órgãos",
+            "BLOOD_DONOR": "Doador de Sangue",
+            "CAS_MEMBER": "Sócio CAS",
+            "SISMEPE_USER": "Usuário SISMEPE",
+            "ACCIDENT_ORIGIN_CERTIFICATE": "Atestado de Origem",
+            "ACCIDENT_ISO": "Inquérito Sanitário de Origem",
+            "CHRONIC_DISEASE": "Doença Crônica",
+            "CONTROLLED_MEDICATION": "Uso de Medicamento Controlado",
+            "HAS_ALLERGY": "Possui Alergia"
+        },
+        "CONTACT": {
+            "TITLE": "Contato",
+            "EMAIL": "Email",
+            "PHONE": "Telefone",
+            "SPOUSE": "Cônjuge",
+            "SPOUSE_BIRTH_DATE": "Data de Nascimento (Cônjuge)"
+        },
+        "DEPENDENTS": {
+            "TITLE": "Dependentes",
+            "NAME": "Nome",
+            "BIRTH_DATE": "Data de Nascimento"
+        }
+    },
+    "COMMON": {
+        "SELECT": "Selecione"
+    },
+    "GENDER": {
+        "MALE": "Masculino",
+        "FEMALE": "Feminino"
+    },
+    "ERRORS": {
+        "FULL_NAME_REQUIRED": "Nome completo é obrigatório",
+        "MILITARY_NAME_REQUIRED": "Nome de guerra é obrigatório",
+        "INVALID_SSN": "SSN inválido (somente números)",
+        "MOTHER_NAME_REQUIRED": "Nome da mãe é obrigatório",
+        "REGISTRATION_NUMBER_REQUIRED": "Matrícula é obrigatória",
+        "INVALID_ZIP_CODE": "CEP inválido"
+    },
+    "ALERTS": {
+        "FILL_REQUIRED": "Por favor, preencha todos os campos obrigatórios."
+    }
+}

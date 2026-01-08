@@ -2,38 +2,38 @@
 <div class="tab-content">
   <!-- Military Hierarchy -->
   <div class="form-section" [formGroup]="militaryHierarchyForm">
-    <h2>Military Hierarchy</h2>
+    <h2>{{ 'PERSONNEL.MILITARY_HIERARCHY.TITLE' | translate }}</h2>
     <div class="form-row">
       <div class="form-group">
-        <label for="number">Number</label>
+        <label for="number">{{ 'PERSONNEL.MILITARY_HIERARCHY.NUMBER' | translate }}</label>
         <input type="text" id="hierarchyNumber" formControlName="number">
       </div>
       <div class="form-group">
-        <label for="abbreviatedRank">Abbreviated Rank</label>
+        <label for="abbreviatedRank">{{ 'PERSONNEL.MILITARY_HIERARCHY.ABBREVIATED_RANK' | translate }}</label>
         <input type="text" id="abbreviatedRank" formControlName="abbreviatedRank">
       </div>
     </div>
     <div class="form-row">
       <div class="form-group">
-        <label for="rank">Rank</label>
+        <label for="rank">{{ 'PERSONNEL.MILITARY_HIERARCHY.RANK' | translate }}</label>
         <select id="rank" formControlName="rank">
-          <option value="">Select</option>
+          <option value="">{{ 'COMMON.SELECT' | translate }}</option>
           @for (rank of ranks; track rank) {
-            <option [value]="rank">{{ rank.rankAbbreviation }}</option>
+          <option [value]="rank">{{ rank.rankAbbreviation }}</option>
           }
         </select>
       </div>
       <div class="form-group">
-        <label for="branch">Branch</label>
+        <label for="branch">{{ 'PERSONNEL.MILITARY_HIERARCHY.BRANCH' | translate }}</label>
         <input type="text" id="branch" formControlName="branch">
       </div>
       <div class="form-group">
-        <label for="registrationNumber">Registration Number <span class="required">*</span></label>
+        <label for="registrationNumber">{{ 'PERSONNEL.MILITARY_HIERARCHY.REGISTRATION_NUMBER' | translate }} <span
+            class="required">*</span></label>
         <input type="text" id="registrationNumber" formControlName="registrationNumber">
-        <div class="error-message"
-              *ngIf="militaryHierarchyForm.get('registrationNumber')?.invalid &&
+        <div class="error-message" *ngIf="militaryHierarchyForm.get('registrationNumber')?.invalid &&
                     militaryHierarchyForm.get('registrationNumber')?.touched">
-          Registration number is required
+          {{ 'ERRORS.REGISTRATION_NUMBER_REQUIRED' | translate }}
         </div>
       </div>
     </div>

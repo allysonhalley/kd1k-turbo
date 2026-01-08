@@ -1,20 +1,22 @@
-import {Component, inject, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
-import {MatTab, MatTabGroup} from "@angular/material/tabs";
+import { Component, inject, OnInit } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from "@angular/forms";
+import { MatTab, MatTabGroup } from "@angular/material/tabs";
 
-import {PersonalDataComponent} from "./personal-data/personal-data.component";
-import {MilitaryHierarchyComponent} from "../military-hierarchy/military-hierarchy.component";
-import {MilitaryService} from "../../services/military.service";
-import {FamilyComponent} from "./family/family.component";
-import {NgIf} from "@angular/common";
-import {MilitaryIdentityComponent} from "./military-identity/military-identity.component";
+import { PersonalDataComponent } from "./personal-data/personal-data.component";
+import { MilitaryHierarchyComponent } from "../military-hierarchy/military-hierarchy.component";
+import { MilitaryService } from "../../services/military.service";
+import { FamilyComponent } from "./family/family.component";
+import { NgIf } from "@angular/common";
+import { MilitaryIdentityComponent } from "./military-identity/military-identity.component";
 
 
 @Component({
-  selector: 'app-personel',
+  selector: 'app-personnel',
   standalone: true,
   imports: [
     FormsModule,
+    TranslateModule,
     MatTab,
     MatTabGroup,
     ReactiveFormsModule,
@@ -23,10 +25,10 @@ import {MilitaryIdentityComponent} from "./military-identity/military-identity.c
     NgIf,
     MilitaryIdentityComponent
   ],
-  templateUrl: '../personel/personel.component.html',
-  styleUrl: '../personel/personel.component.scss'
+  templateUrl: './personnel.component.html',
+  styleUrl: './personnel.component.scss'
 })
-export class PersonelComponent implements OnInit {
+export class PersonnelComponent implements OnInit {
   militaryForm!: FormGroup;
   states: string[] = [];
   maritalStatuses: string[] = [];

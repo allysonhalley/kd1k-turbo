@@ -2,13 +2,14 @@
 
 import { Component, OnInit, Input, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
 import { ReactiveFormsModule, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MilitaryService } from '../../services/military.service';
 
 @Component({
   selector: 'app-documents-history',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, TranslateModule],
   templateUrl: './documents-history.component.html',
   styleUrls: ['./documents-history.component.scss']
 })

@@ -2,10 +2,10 @@
 <div class="tab-content">
   <!-- Qualifications -->
   <div class="form-section" [formGroup]="qualificationsForm">
-    <h2>Qualifications</h2>
+    <h2>{{ 'PERSONNEL.QUALIFICATIONS.TITLE' | translate }}</h2>
     <div class="form-row">
       <div class="form-group">
-        <label for="courseName">Course (Qualification)</label>
+        <label for="courseName">{{ 'PERSONNEL.QUALIFICATIONS.COURSE_NAME' | translate }}</label>
         <input type="text" id="courseName" formControlName="courseName">
       </div>
     </div>
@@ -13,29 +13,29 @@
 
   <!-- Education -->
   <div class="form-section" [formGroup]="educationForm">
-    <h2>Education</h2>
+    <h2>{{ 'PERSONNEL.EDUCATION.TITLE' | translate }}</h2>
     <div class="form-row">
       <div class="form-group">
-        <label for="educationLevel">Education Level</label>
+        <label for="educationLevel">{{ 'PERSONNEL.EDUCATION.LEVEL' | translate }}</label>
         <select id="educationLevel" formControlName="educationLevel">
-          <option value="">Select</option>
+          <option value="">{{ 'COMMON.SELECT' | translate }}</option>
           @for (level of educationLevels; track level) {
-            <option [value]="level">{{ level }}</option>
+          <option [value]="level">{{ level }}</option>
           }
         </select>
       </div>
       <div class="form-group">
-        <label for="institution">Institution</label>
+        <label for="institution">{{ 'PERSONNEL.EDUCATION.INSTITUTION' | translate }}</label>
         <input type="text" id="institution" formControlName="institution">
       </div>
     </div>
     <div class="form-row">
       <div class="form-group">
-        <label for="course">Course</label>
+        <label for="course">{{ 'PERSONNEL.EDUCATION.COURSE' | translate }}</label>
         <input type="text" id="course" formControlName="course">
       </div>
       <div class="form-group">
-        <label for="period">Period</label>
+        <label for="period">{{ 'PERSONNEL.EDUCATION.PERIOD' | translate }}</label>
         <input type="text" id="period" formControlName="period">
       </div>
     </div>

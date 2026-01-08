@@ -1,16 +1,18 @@
-import {Component, Input} from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
-import {CommonModule, NgForOf, NgIf} from "@angular/common";
+import { CommonModule, NgForOf } from "@angular/common";
 
 @Component({
   selector: 'app-military-identity',
   standalone: true,
-    imports: [
-      CommonModule,
-      ReactiveFormsModule,
-      NgIf,
-      NgForOf
-    ],
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+
+    NgForOf,
+    TranslateModule
+  ],
   templateUrl: './military-identity.component.html',
   styleUrl: './military-identity.component.scss'
 })

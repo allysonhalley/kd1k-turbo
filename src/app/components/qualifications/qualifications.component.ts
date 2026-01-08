@@ -2,13 +2,14 @@
 
 import { Component, OnInit, Input, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
 import { ReactiveFormsModule, FormGroup, FormBuilder } from '@angular/forms';
 import { MilitaryService } from '../../services/military.service';
 
 @Component({
   selector: 'app-qualifications',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, TranslateModule],
   templateUrl: './qualifications.component.html',
   styleUrls: ['./qualifications.component.scss']
 })

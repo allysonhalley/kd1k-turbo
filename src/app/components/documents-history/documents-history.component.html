@@ -2,44 +2,44 @@
 <div class="tab-content">
   <!-- Military History -->
   <div class="form-section" [formGroup]="militaryHistoryForm">
-    <h2>Military History</h2>
+    <h2>{{ 'PERSONNEL.MILITARY_HISTORY.TITLE' | translate }}</h2>
     <div class="form-row">
       <div class="form-group">
-        <label for="entryDateCBMPE">Entry Date</label>
+        <label for="entryDateCBMPE">{{ 'PERSONNEL.MILITARY_HISTORY.ENTRY_DATE' | translate }}</label>
         <input type="date" id="entryDateCBMPE" formControlName="entryDateCBMPE">
       </div>
       <div class="form-group">
-        <label for="serviceTime">Service Time</label>
+        <label for="serviceTime">{{ 'PERSONNEL.MILITARY_HISTORY.SERVICE_TIME' | translate }}</label>
         <input type="text" id="serviceTime" formControlName="serviceTime">
       </div>
     </div>
     <div class="form-row">
       <div class="form-group">
-        <label for="accruedTime">Accrued Time (Days)</label>
+        <label for="accruedTime">{{ 'PERSONNEL.MILITARY_HISTORY.ACCRUED_TIME' | translate }}</label>
         <input type="number" id="accruedTime" formControlName="accruedTime">
       </div>
       <div class="form-group">
-        <label for="totalTime">Total Time (Days)</label>
+        <label for="totalTime">{{ 'PERSONNEL.MILITARY_HISTORY.TOTAL_TIME' | translate }}</label>
         <input type="number" id="totalTime" formControlName="totalTime">
       </div>
       <div class="form-group">
-        <label for="formattedTotalTime">Formatted Total Time</label>
+        <label for="formattedTotalTime">{{ 'PERSONNEL.MILITARY_HISTORY.FORMATTED_TOTAL_TIME' | translate }}</label>
         <input type="text" id="formattedTotalTime" formControlName="formattedTotalTime">
       </div>
     </div>
     <div class="form-row">
       <div class="form-group">
-        <label for="arrivalDateGBAPH">Arrival Date</label>
+        <label for="arrivalDateGBAPH">{{ 'PERSONNEL.MILITARY_HISTORY.ARRIVAL_DATE' | translate }}</label>
         <input type="date" id="arrivalDateGBAPH" formControlName="arrivalDateGBAPH">
       </div>
       <div class="form-group">
-        <label for="spArrivalGBAPH">SP Arrival</label>
+        <label for="spArrivalGBAPH">{{ 'PERSONNEL.MILITARY_HISTORY.SP_ARRIVAL' | translate }}</label>
         <input type="text" id="spArrivalGBAPH" formControlName="spArrivalGBAPH">
       </div>
     </div>
     <div class="form-row">
       <div class="form-group">
-        <label for="lastPromotionDate">Last Promotion Date</label>
+        <label for="lastPromotionDate">{{ 'PERSONNEL.MILITARY_HISTORY.LAST_PROMOTION_DATE' | translate }}</label>
         <input type="date" id="lastPromotionDate" formControlName="lastPromotionDate">
       </div>
     </div>
@@ -73,56 +73,55 @@
 
   <!-- Address -->
   <div class="form-section" [formGroup]="addressForm">
-    <h2>Address</h2>
+    <h2>{{ 'PERSONNEL.ADDRESS.TITLE' | translate }}</h2>
     <div class="form-row">
       <div class="form-group">
-        <label for="zipCode">ZIP Code</label>
+        <label for="zipCode">{{ 'PERSONNEL.ADDRESS.ZIP_CODE' | translate }}</label>
         <div class="input-with-button">
           <input type="text" id="zipCode" formControlName="zipCode" (blur)="searchAddressByZipCode()">
           <button type="button" class="btn-search" (click)="searchAddressByZipCode()">
             <span class="icon">🔍</span>
           </button>
         </div>
-        <div class="error-message"
-             *ngIf="addressForm.get('zipCode')?.invalid &&
+        <div class="error-message" *ngIf="addressForm.get('zipCode')?.invalid &&
                    addressForm.get('zipCode')?.touched">
-          Invalid ZIP code
+          {{ 'ERRORS.INVALID_ZIP_CODE' | translate }}
         </div>
       </div>
       <div class="form-group">
-        <label for="street">Street</label>
+        <label for="street">{{ 'PERSONNEL.ADDRESS.STREET' | translate }}</label>
         <input type="text" id="street" formControlName="street">
       </div>
       <div class="form-group">
-        <label for="number">Number</label>
+        <label for="number">{{ 'PERSONNEL.ADDRESS.NUMBER' | translate }}</label>
         <input type="text" id="addressNumber" formControlName="number">
       </div>
     </div>
     <div class="form-row">
       <div class="form-group">
-        <label for="complement">Complement</label>
+        <label for="complement">{{ 'PERSONNEL.ADDRESS.COMPLEMENT' | translate }}</label>
         <input type="text" id="complement" formControlName="complement">
       </div>
       <div class="form-group">
-        <label for="reference">Reference</label>
+        <label for="reference">{{ 'PERSONNEL.ADDRESS.REFERENCE' | translate }}</label>
         <input type="text" id="reference" formControlName="reference">
       </div>
     </div>
     <div class="form-row">
       <div class="form-group">
-        <label for="neighborhood">Neighborhood</label>
+        <label for="neighborhood">{{ 'PERSONNEL.ADDRESS.NEIGHBORHOOD' | translate }}</label>
         <input type="text" id="neighborhood" formControlName="neighborhood">
       </div>
       <div class="form-group">
-        <label for="city">City</label>
+        <label for="city">{{ 'PERSONNEL.ADDRESS.CITY' | translate }}</label>
         <input type="text" id="city" formControlName="city">
       </div>
       <div class="form-group">
-        <label for="addressState">State</label>
+        <label for="addressState">{{ 'PERSONNEL.ADDRESS.STATE' | translate }}</label>
         <select id="addressState" formControlName="state">
-          <option value="">Select</option>
+          <option value="">{{ 'COMMON.SELECT' | translate }}</option>
           @for (state of states; track state) {
-            <option [value]="state">{{ state }}</option>
+          <option [value]="state">{{ state }}</option>
           }
         </select>
       </div>
@@ -131,32 +130,32 @@
 
   <!-- Bank Details -->
   <div class="form-section" [formGroup]="bankDetailsForm">
-    <h2>Bank Details</h2>
+    <h2>{{ 'PERSONNEL.BANK_DETAILS.TITLE' | translate }}</h2>
     <div class="form-row">
       <div class="form-group">
-        <label for="bank">Bank</label>
+        <label for="bank">{{ 'PERSONNEL.BANK_DETAILS.BANK' | translate }}</label>
         <input type="text" id="bank" formControlName="bank">
       </div>
       <div class="form-group">
-        <label for="branch">Branch</label>
+        <label for="branch">{{ 'PERSONNEL.BANK_DETAILS.BRANCH' | translate }}</label>
         <input type="text" id="branch" formControlName="branch">
       </div>
     </div>
     <div class="form-row">
       <div class="form-group">
-        <label for="accountType">Account Type</label>
+        <label for="accountType">{{ 'PERSONNEL.BANK_DETAILS.ACCOUNT_TYPE' | translate }}</label>
         <select id="accountType" formControlName="accountType">
-          <option value="">Select</option>
-          <option value="Checking">Checking</option>
-          <option value="Savings">Savings</option>
+          <option value="">{{ 'COMMON.SELECT' | translate }}</option>
+          <option value="Checking">{{ 'PERSONNEL.BANK_DETAILS.CHECKING' | translate }}</option>
+          <option value="Savings">{{ 'PERSONNEL.BANK_DETAILS.SAVINGS' | translate }}</option>
         </select>
       </div>
       <div class="form-group">
-        <label for="accountNumber">Account Number</label>
+        <label for="accountNumber">{{ 'PERSONNEL.BANK_DETAILS.ACCOUNT_NUMBER' | translate }}</label>
         <input type="text" id="accountNumber" formControlName="accountNumber">
       </div>
       <div class="form-group">
-        <label for="digit">Check Digit</label>
+        <label for="digit">{{ 'PERSONNEL.BANK_DETAILS.CHECK_DIGIT' | translate }}</label>
         <input type="text" id="digit" formControlName="digit">
       </div>
     </div>
@@ -165,28 +164,28 @@
   <!-- Voter Registration and Driver's License -->
   <div class="columns">
     <div class="form-section" [formGroup]="voterRegistrationForm">
-      <h2>Voter Registration</h2>
+      <h2>{{ 'PERSONNEL.VOTER_REGISTRATION.TITLE' | translate }}</h2>
       <div class="form-row">
         <div class="form-group">
-          <label for="voterNumber">Number</label>
+          <label for="voterNumber">{{ 'PERSONNEL.VOTER_REGISTRATION.NUMBER' | translate }}</label>
           <input type="text" id="voterNumber" formControlName="number">
         </div>
         <div class="form-group">
-          <label for="zone">Zone</label>
+          <label for="zone">{{ 'PERSONNEL.VOTER_REGISTRATION.ZONE' | translate }}</label>
           <input type="text" id="zone" formControlName="zone">
         </div>
       </div>
       <div class="form-row">
         <div class="form-group">
-          <label for="section">Section</label>
+          <label for="section">{{ 'PERSONNEL.VOTER_REGISTRATION.SECTION' | translate }}</label>
           <input type="text" id="section" formControlName="section">
         </div>
         <div class="form-group">
-          <label for="voterState">State</label>
+          <label for="voterState">{{ 'PERSONNEL.VOTER_REGISTRATION.STATE' | translate }}</label>
           <select id="voterState" formControlName="state">
-            <option value="">Select</option>
+            <option value="">{{ 'COMMON.SELECT' | translate }}</option>
             @for (state of states; track state) {
-              <option [value]="state">{{ state }}</option>
+            <option [value]="state">{{ state }}</option>
             }
           </select>
         </div>
@@ -194,31 +193,31 @@
     </div>
 
     <div class="form-section" [formGroup]="driversLicenseForm">
-      <h2>Driver's License</h2>
+      <h2>{{ 'PERSONNEL.DRIVERS_LICENSE.TITLE' | translate }}</h2>
       <div class="form-row">
         <div class="form-group">
-          <label for="registrationNumber">Registration Number</label>
+          <label for="registrationNumber">{{ 'PERSONNEL.DRIVERS_LICENSE.REGISTRATION_NUMBER' | translate }}</label>
           <input type="text" id="registrationNumber" formControlName="registrationNumber">
         </div>
         <div class="form-group">
-          <label for="licenseState">State</label>
+          <label for="licenseState">{{ 'PERSONNEL.DRIVERS_LICENSE.STATE' | translate }}</label>
           <select id="licenseState" formControlName="state">
-            <option value="">Select</option>
+            <option value="">{{ 'COMMON.SELECT' | translate }}</option>
             @for (state of states; track state) {
-              <option [value]="state">{{ state }}</option>
+            <option [value]="state">{{ state }}</option>
             }
           </select>
         </div>
       </div>
       <div class="form-row">
         <div class="form-group">
-          <label for="expirationDate">Expiration Date</label>
+          <label for="expirationDate">{{ 'PERSONNEL.DRIVERS_LICENSE.EXPIRATION_DATE' | translate }}</label>
           <input type="date" id="expirationDate" formControlName="expirationDate">
         </div>
         <div class="form-group">
-          <label for="category">Category</label>
+          <label for="category">{{ 'PERSONNEL.DRIVERS_LICENSE.CATEGORY' | translate }}</label>
           <select id="category" formControlName="category">
-            <option value="">Select</option>
+            <option value="">{{ 'COMMON.SELECT' | translate }}</option>
             <option value="A">A</option>
             <option value="B">B</option>
             <option value="C">C</option>
@@ -233,11 +232,11 @@
       </div>
       <div class="form-row">
         <div class="form-group">
-          <label for="firstLicenseDate">First License Date</label>
+          <label for="firstLicenseDate">{{ 'PERSONNEL.DRIVERS_LICENSE.FIRST_LICENSE_DATE' | translate }}</label>
           <input type="date" id="firstLicenseDate" formControlName="firstLicenseDate">
         </div>
         <div class="form-group">
-          <label for="issueDate">Issue Date</label>
+          <label for="issueDate">{{ 'PERSONNEL.DRIVERS_LICENSE.ISSUE_DATE' | translate }}</label>
           <input type="date" id="issueDate" formControlName="issueDate">
         </div>
       </div>
@@ -247,24 +246,24 @@
   <!-- Other Information -->
   <div class="columns">
     <div class="form-section" [formGroup]="boatLicenseForm">
-      <h2>Boat License</h2>
+      <h2>{{ 'PERSONNEL.BOAT_LICENSE.TITLE' | translate }}</h2>
       <div class="form-row">
         <div class="form-group">
-          <label for="boatNumber">Number</label>
+          <label for="boatNumber">{{ 'PERSONNEL.BOAT_LICENSE.NUMBER' | translate }}</label>
           <input type="text" id="boatNumber" formControlName="number">
         </div>
       </div>
     </div>
 
     <div class="form-section" [formGroup]="firearmForm">
-      <h2>Firearm</h2>
+      <h2>{{ 'PERSONNEL.FIREARM.TITLE' | translate }}</h2>
       <div class="form-row">
         <div class="form-group">
-          <label for="sigmaNumber">SIGMA Number</label>
+          <label for="sigmaNumber">{{ 'PERSONNEL.FIREARM.SIGMA_NUMBER' | translate }}</label>
           <input type="text" id="sigmaNumber" formControlName="sigmaNumber">
         </div>
         <div class="form-group">
-          <label for="serviceUseAuthorization">Service Use Authorization</label>
+          <label for="serviceUseAuthorization">{{ 'PERSONNEL.FIREARM.SERVICE_USE_AUTHORIZATION' | translate }}</label>
           <input type="text" id="serviceUseAuthorization" formControlName="serviceUseAuthorization">
         </div>
       </div>
@@ -273,12 +272,12 @@
 
   <!-- Measurements and Additional Information -->
   <div class="form-section" [formGroup]="measurementsForm">
-    <h2>Measurements and Additional Information</h2>
+    <h2>{{ 'PERSONNEL.MEASUREMENTS.TITLE' | translate }}</h2>
     <div class="form-row">
       <div class="form-group">
-        <label for="bloodType">Blood Type</label>
+        <label for="bloodType">{{ 'PERSONNEL.MEASUREMENTS.BLOOD_TYPE' | translate }}</label>
         <select id="bloodType" formControlName="bloodType">
-          <option value="">Select</option>
+          <option value="">{{ 'COMMON.SELECT' | translate }}</option>
           <option value="A">A</option>
           <option value="B">B</option>
           <option value="AB">AB</option>
@@ -286,52 +285,52 @@
         </select>
       </div>
       <div class="form-group">
-        <label for="rhFactor">RH Factor</label>
+        <label for="rhFactor">{{ 'PERSONNEL.MEASUREMENTS.RH_FACTOR' | translate }}</label>
         <select id="rhFactor" formControlName="rhFactor">
-          <option value="">Select</option>
-          <option value="+">Positive (+)</option>
-          <option value="-">Negative (-)</option>
+          <option value="">{{ 'COMMON.SELECT' | translate }}</option>
+          <option value="+">{{ 'PERSONNEL.MEASUREMENTS.POSITIVE' | translate }}</option>
+          <option value="-">{{ 'PERSONNEL.MEASUREMENTS.NEGATIVE' | translate }}</option>
         </select>
       </div>
     </div>
 
     <div class="form-row">
       <div class="form-group">
-        <label for="headSize">Head Size</label>
+        <label for="headSize">{{ 'PERSONNEL.MEASUREMENTS.HEAD_SIZE' | translate }}</label>
         <input type="text" id="headSize" formControlName="headSize">
       </div>
       <div class="form-group">
-        <label for="shoeSize">Shoe Size</label>
+        <label for="shoeSize">{{ 'PERSONNEL.MEASUREMENTS.SHOE_SIZE' | translate }}</label>
         <input type="text" id="shoeSize" formControlName="shoeSize">
       </div>
       <div class="form-group">
-        <label for="shirtSize">Shirt Size</label>
+        <label for="shirtSize">{{ 'PERSONNEL.MEASUREMENTS.SHIRT_SIZE' | translate }}</label>
         <input type="text" id="shirtSize" formControlName="shirtSize">
       </div>
     </div>
 
     <div class="form-row">
       <div class="form-group">
-        <label for="pantsSize">Pants Size</label>
+        <label for="pantsSize">{{ 'PERSONNEL.MEASUREMENTS.PANTS_SIZE' | translate }}</label>
         <input type="text" id="pantsSize" formControlName="pantsSize">
       </div>
       <div class="form-group">
-        <label for="bootSize">Boot Size</label>
+        <label for="bootSize">{{ 'PERSONNEL.MEASUREMENTS.BOOT_SIZE' | translate }}</label>
         <input type="text" id="bootSize" formControlName="bootSize">
       </div>
       <div class="form-group">
-        <label for="shortsSize">Shorts Size</label>
+        <label for="shortsSize">{{ 'PERSONNEL.MEASUREMENTS.SHORTS_SIZE' | translate }}</label>
         <input type="text" id="shortsSize" formControlName="shortsSize">
       </div>
     </div>
 
     <div class="form-row">
       <div class="form-group">
-        <label for="swimsuitSize">Swimsuit Size</label>
+        <label for="swimsuitSize">{{ 'PERSONNEL.MEASUREMENTS.SWIMSUIT_SIZE' | translate }}</label>
         <input type="text" id="swimsuitSize" formControlName="swimsuitSize">
       </div>
       <div class="form-group">
-        <label for="swimTrunksSize">Swim Trunks Size</label>
+        <label for="swimTrunksSize">{{ 'PERSONNEL.MEASUREMENTS.SWIM_TRUNKS_SIZE' | translate }}</label>
         <input type="text" id="swimTrunksSize" formControlName="swimTrunksSize">
       </div>
     </div>
@@ -340,19 +339,19 @@
       <div class="form-group checkbox-group">
         <label class="checkbox-label">
           <input type="checkbox" formControlName="organDonor">
-          <span>Organ Donor</span>
+          <span>{{ 'PERSONNEL.MEASUREMENTS.ORGAN_DONOR' | translate }}</span>
         </label>
       </div>
       <div class="form-group checkbox-group">
         <label class="checkbox-label">
           <input type="checkbox" formControlName="bloodDonor">
-          <span>Blood Donor</span>
+          <span>{{ 'PERSONNEL.MEASUREMENTS.BLOOD_DONOR' | translate }}</span>
         </label>
       </div>
       <div class="form-group checkbox-group">
         <label class="checkbox-label">
           <input type="checkbox" formControlName="casMember">
-          <span>CAS Member</span>
+          <span>{{ 'PERSONNEL.MEASUREMENTS.CAS_MEMBER' | translate }}</span>
         </label>
       </div>
     </div>
@@ -361,19 +360,19 @@
       <div class="form-group checkbox-group">
         <label class="checkbox-label">
           <input type="checkbox" formControlName="sismepeUser">
-          <span>SISMEPE User</span>
+          <span>{{ 'PERSONNEL.MEASUREMENTS.SISMEPE_USER' | translate }}</span>
         </label>
       </div>
       <div class="form-group checkbox-group">
         <label class="checkbox-label">
           <input type="checkbox" formControlName="accidentWithOriginCertificate">
-          <span>Accident with Origin Certificate</span>
+          <span>{{ 'PERSONNEL.MEASUREMENTS.ACCIDENT_ORIGIN_CERTIFICATE' | translate }}</span>
         </label>
       </div>
       <div class="form-group checkbox-group">
         <label class="checkbox-label">
           <input type="checkbox" formControlName="accidentWithIso">
-          <span>Accident with ISO</span>
+          <span>{{ 'PERSONNEL.MEASUREMENTS.ACCIDENT_ISO' | translate }}</span>
         </label>
       </div>
     </div>
@@ -382,19 +381,19 @@
       <div class="form-group checkbox-group">
         <label class="checkbox-label">
           <input type="checkbox" formControlName="chronicDisease">
-          <span>Chronic Disease</span>
+          <span>{{ 'PERSONNEL.MEASUREMENTS.CHRONIC_DISEASE' | translate }}</span>
         </label>
       </div>
       <div class="form-group checkbox-group">
         <label class="checkbox-label">
           <input type="checkbox" formControlName="controlledMedication">
-          <span>Controlled Medication</span>
+          <span>{{ 'PERSONNEL.MEASUREMENTS.CONTROLLED_MEDICATION' | translate }}</span>
         </label>
       </div>
       <div class="form-group checkbox-group">
         <label class="checkbox-label">
           <input type="checkbox" formControlName="hasAllergy">
-          <span>Has Allergy</span>
+          <span>{{ 'PERSONNEL.MEASUREMENTS.HAS_ALLERGY' | translate }}</span>
         </label>
       </div>
     </div>
