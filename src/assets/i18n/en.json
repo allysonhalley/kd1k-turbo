@@ -1,189 +1,193 @@
 {
-    "HELLO": "Olá Mundo!",
+    "HELLO": "Hello World!",
     "TABS": {
-        "PERSON": "Dados Pessoais",
-        "MILITARY_HIERARCHY": "Hierarquia Militar",
-        "PERSONAL_DATA": "Dados Pessoais",
-        "FAMILY": "Família",
-        "QUALIFICATIONS": "Qualificações",
-        "ASSIGNMENT_SCHEDULE": "Atribuição e Escala",
-        "DOCUMENTS_HISTORY": "Documentos e Histórico",
-        "CONTACTS_DEPENDENTS": "Contatos e Dependentes"
+        "PERSON": "Personal Data",
+        "MILITARY_HIERARCHY": "Military Hierarchy",
+        "PERSONAL_DATA": "Personal Data",
+        "FAMILY": "Family",
+        "QUALIFICATIONS": "Qualifications",
+        "ASSIGNMENT_SCHEDULE": "Assignment and Schedule",
+        "DOCUMENTS_HISTORY": "Documents and History",
+        "CONTACTS_DEPENDENTS": "Contacts and Dependents"
     },
     "BUTTONS": {
-        "CLEAR": "Limpar",
-        "SUBMIT": "Enviar"
+        "CLEAR": "Clear",
+        "SUBMIT": "Submit",
+        "ADD_DEPENDENT": "Add Dependent"
     },
     "PERSONNEL": {
         "PERSONAL_DATA": {
-            "PERSONAL_DATA": "Dados Pessoais",
-            "FULL_NAME": "Nome Completo",
-            "MILITARY_NAME": "Nome de Guerra",
+            "PERSONAL_DATA": "Personal Data",
+            "FULL_NAME": "Full Name",
+            "MILITARY_NAME": "Military Name",
             "SSN": "SSN",
-            "BIRTH_DATE": "Data de Nascimento",
-            "MARITAL_STATUS": "Estado Civil",
-            "GENDER": "Gênero",
-            "RELIGION": "Religião"
+            "BIRTH_DATE": "Birth Date",
+            "MARITAL_STATUS": "Marital Status",
+            "GENDER": "Gender",
+            "RELIGION": "Religion"
         },
         "MILITARY_IDENTITY": {
-            "TITLE": "Identidade Militar",
-            "NUMBER": "Número",
-            "ISSUING_AUTHORITY": "Órgão Emissor",
-            "STATE": "UF",
-            "ISSUE_DATE": "Data de Emissão",
-            "EXPIRATION_DATE": "Data de Validade"
+            "TITLE": "Military Identity",
+            "NUMBER": "Number",
+            "ISSUING_AUTHORITY": "Issuing Authority",
+            "STATE": "State",
+            "ISSUE_DATE": "Issue Date",
+            "EXPIRATION_DATE": "Expiration Date"
         },
         "FAMILY": {
-            "TITLE": "Família",
-            "MOTHER_NAME": "Nome da Mãe",
-            "FATHER_NAME": "Nome do Pai",
-            "NATIONALITY": "Nacionalidade",
-            "BIRTHPLACE": "Naturalidade",
-            "STATE": "UF"
+            "TITLE": "Family",
+            "MOTHER_NAME": "Mother's Name",
+            "FATHER_NAME": "Father's Name",
+            "NATIONALITY": "Nationality",
+            "BIRTHPLACE": "Place of Birth",
+            "STATE": "State"
         },
         "MILITARY_HIERARCHY": {
-            "TITLE": "Hierarquia Militar",
-            "NUMBER": "Número",
-            "ABBREVIATED_RANK": "Posto/Graduação (Abreviado)",
-            "RANK": "Posto/Graduação",
-            "BRANCH": "Arma/Quadro/Serviço",
-            "REGISTRATION_NUMBER": "Matrícula"
+            "TITLE": "Military Hierarchy",
+            "NUMBER": "Number",
+            "ABBREVIATED_RANK": "Rank (Abbreviated)",
+            "RANK": "Rank",
+            "BRANCH": "Branch/Service",
+            "REGISTRATION_NUMBER": "Registration Number"
         },
         "QUALIFICATIONS": {
-            "TITLE": "Qualificações",
-            "COURSE_NAME": "Curso (Qualificação)"
+            "TITLE": "Qualifications",
+            "COURSE_NAME": "Course (Qualification)"
         },
         "EDUCATION": {
-            "TITLE": "Escolaridade",
-            "LEVEL": "Nível de Escolaridade",
-            "INSTITUTION": "Instituição",
-            "COURSE": "Curso",
-            "PERIOD": "Período"
+            "TITLE": "Education",
+            "LEVEL": "Education Level",
+            "INSTITUTION": "Institution",
+            "COURSE": "Course",
+            "PERIOD": "Period"
         },
         "ASSIGNMENT": {
-            "TITLE": "Atribuição",
-            "LOCATION": "Localização"
+            "TITLE": "Assignment",
+            "LOCATION": "Location"
         },
         "WORK_SCHEDULE": {
-            "TITLE": "Escala de Trabalho",
-            "SCHEDULE": "Escala",
-            "REDUCED_WORKLOAD": "Carga Horária Reduzida",
-            "READAPTED": "Readaptado"
+            "TITLE": "Work Schedule",
+            "SCHEDULE": "Schedule",
+            "REDUCED_WORKLOAD": "Reduced Workload",
+            "READAPTED": "Readapted"
         },
         "MILITARY_HISTORY": {
-            "TITLE": "Histórico Militar",
-            "ENTRY_DATE": "Data de Ingresso",
-            "SERVICE_TIME": "Tempo de Serviço",
-            "ACCRUED_TIME": "Tempo Averbado (Dias)",
-            "TOTAL_TIME": "Tempo Total (Dias)",
-            "FORMATTED_TOTAL_TIME": "Tempo Total Formatado",
-            "ARRIVAL_DATE": "Data de Chegada",
-            "SP_ARRIVAL": "Chegada SP",
-            "LAST_PROMOTION_DATE": "Última Promoção",
+            "TITLE": "Military History",
+            "ENTRY_DATE": "Entry Date",
+            "SERVICE_TIME": "Service Time",
+            "ACCRUED_TIME": "Accrued Time (Days)",
+            "TOTAL_TIME": "Total Time (Days)",
+            "FORMATTED_TOTAL_TIME": "Formatted Total Time",
+            "ARRIVAL_DATE": "Arrival Date",
+            "SP_ARRIVAL": "SP Arrival",
+            "LAST_PROMOTION_DATE": "Last Promotion",
             "COAPH": "COAPH",
             "CRV": "CRV",
             "CMR": "CMR",
             "MPMBM": "MPMBM"
         },
         "ADDRESS": {
-            "TITLE": "Endereço",
-            "ZIP_CODE": "CEP",
-            "STREET": "Rua",
-            "NUMBER": "Número",
-            "COMPLEMENT": "Complemento",
-            "REFERENCE": "Referência",
-            "NEIGHBORHOOD": "Bairro",
-            "CITY": "Cidade",
-            "STATE": "UF"
+            "TITLE": "Address",
+            "ZIP_CODE": "Zip Code",
+            "STREET": "Street",
+            "NUMBER": "Number",
+            "COMPLEMENT": "Complement",
+            "REFERENCE": "Reference",
+            "NEIGHBORHOOD": "Neighborhood",
+            "CITY": "City",
+            "STATE": "State"
         },
         "BANK_DETAILS": {
-            "TITLE": "Dados Bancários",
-            "BANK": "Banco",
-            "BRANCH": "Agência",
-            "ACCOUNT_TYPE": "Tipo de Conta",
-            "ACCOUNT_NUMBER": "Conta",
-            "CHECK_DIGIT": "Dígito",
-            "CHECKING": "Corrente",
-            "SAVINGS": "Poupança"
+            "TITLE": "Bank Details",
+            "BANK": "Bank",
+            "BRANCH": "Branch",
+            "ACCOUNT_TYPE": "Account Type",
+            "ACCOUNT_NUMBER": "Account Number",
+            "CHECK_DIGIT": "Check Digit",
+            "CHECKING": "Checking",
+            "SAVINGS": "Savings"
         },
         "VOTER_REGISTRATION": {
-            "TITLE": "Título de Eleitor",
-            "NUMBER": "Número",
-            "ZONE": "Zona",
-            "SECTION": "Seção",
-            "STATE": "UF"
+            "TITLE": "Voter Registration",
+            "NUMBER": "Number",
+            "ZONE": "Zone",
+            "SECTION": "Section",
+            "STATE": "State"
         },
         "DRIVERS_LICENSE": {
-            "TITLE": "CNH",
-            "REGISTRATION_NUMBER": "Registro",
-            "STATE": "UF",
-            "EXPIRATION_DATE": "Validade",
-            "CATEGORY": "Categoria",
-            "FIRST_LICENSE_DATE": "Primeira Habilitação",
-            "ISSUE_DATE": "Emissão"
+            "TITLE": "Driver's License",
+            "REGISTRATION_NUMBER": "Registration Number",
+            "STATE": "State",
+            "EXPIRATION_DATE": "Expiration Date",
+            "CATEGORY": "Category",
+            "FIRST_LICENSE_DATE": "First License Date",
+            "ISSUE_DATE": "Issue Date"
         },
         "BOAT_LICENSE": {
-            "TITLE": "Arrais Amador",
-            "NUMBER": "Número"
+            "TITLE": "Amateur Skipper License",
+            "NUMBER": "Number"
         },
         "FIREARM": {
-            "TITLE": "Arma de Fogo",
-            "SIGMA_NUMBER": "Nº SIGMA",
-            "SERVICE_USE_AUTHORIZATION": "Autorização Carga"
+            "TITLE": "Firearm",
+            "SIGMA_NUMBER": "SIGMA Number",
+            "SERVICE_USE_AUTHORIZATION": "Service Use Authorization"
         },
         "MEASUREMENTS": {
-            "TITLE": "Medidas e Informações Adicionais",
-            "BLOOD_TYPE": "Tipo Sanguíneo",
-            "RH_FACTOR": "Fator RH",
-            "POSITIVE": "Positivo (+)",
-            "NEGATIVE": "Negativo (-)",
-            "HEAD_SIZE": "Cobertura",
-            "SHOE_SIZE": "Calçado",
-            "SHIRT_SIZE": "Camisa",
-            "PANTS_SIZE": "Calça",
-            "BOOT_SIZE": "Coturno",
-            "SHORTS_SIZE": "Short",
-            "SWIMSUIT_SIZE": "Sunga",
-            "SWIM_TRUNKS_SIZE": "Calção de Banho",
-            "ORGAN_DONOR": "Doador de Órgãos",
-            "BLOOD_DONOR": "Doador de Sangue",
-            "CAS_MEMBER": "Sócio CAS",
-            "SISMEPE_USER": "Usuário SISMEPE",
-            "ACCIDENT_ORIGIN_CERTIFICATE": "Atestado de Origem",
-            "ACCIDENT_ISO": "Inquérito Sanitário de Origem",
-            "CHRONIC_DISEASE": "Doença Crônica",
-            "CONTROLLED_MEDICATION": "Uso de Medicamento Controlado",
-            "HAS_ALLERGY": "Possui Alergia"
+            "TITLE": "Measurements and Additional Info",
+            "BLOOD_TYPE": "Blood Type",
+            "RH_FACTOR": "RH Factor",
+            "POSITIVE": "Positive (+)",
+            "NEGATIVE": "Negative (-)",
+            "HEAD_SIZE": "Hat Size",
+            "SHOE_SIZE": "Shoe Size",
+            "SHIRT_SIZE": "Shirt Size",
+            "PANTS_SIZE": "Pants Size",
+            "BOOT_SIZE": "Boot Size",
+            "SHORTS_SIZE": "Shorts Size",
+            "SWIMSUIT_SIZE": "Swimsuit Size",
+            "SWIM_TRUNKS_SIZE": "Trunks Size",
+            "ORGAN_DONOR": "Organ Donor",
+            "BLOOD_DONOR": "Blood Donor",
+            "CAS_MEMBER": "CAS Member",
+            "SISMEPE_USER": "SISMEPE User",
+            "ACCIDENT_ORIGIN_CERTIFICATE": "Origin Certificate",
+            "ACCIDENT_ISO": "Origin Sanitary Inquiry",
+            "CHRONIC_DISEASE": "Chronic Disease",
+            "CONTROLLED_MEDICATION": "Controlled Medication Use",
+            "HAS_ALLERGY": "Has Allergy"
         },
         "CONTACT": {
-            "TITLE": "Contato",
+            "TITLE": "Contact",
             "EMAIL": "Email",
-            "PHONE": "Telefone",
-            "SPOUSE": "Cônjuge",
-            "SPOUSE_BIRTH_DATE": "Data de Nascimento (Cônjuge)"
+            "PHONE": "Phone",
+            "SPOUSE": "Spouse",
+            "SPOUSE_BIRTH_DATE": "Birth Date (Spouse)"
         },
         "DEPENDENTS": {
-            "TITLE": "Dependentes",
-            "NAME": "Nome",
-            "BIRTH_DATE": "Data de Nascimento"
+            "TITLE": "Dependents",
+            "NAME": "Name",
+            "BIRTH_DATE": "Birth Date"
         }
     },
     "COMMON": {
-        "SELECT": "Selecione"
+        "SELECT": "Select"
     },
     "GENDER": {
-        "MALE": "Masculino",
-        "FEMALE": "Feminino"
+        "MALE": "Male",
+        "FEMALE": "Female"
     },
     "ERRORS": {
-        "FULL_NAME_REQUIRED": "Nome completo é obrigatório",
-        "MILITARY_NAME_REQUIRED": "Nome de guerra é obrigatório",
-        "INVALID_SSN": "SSN inválido (somente números)",
-        "MOTHER_NAME_REQUIRED": "Nome da mãe é obrigatório",
-        "REGISTRATION_NUMBER_REQUIRED": "Matrícula é obrigatória",
-        "INVALID_ZIP_CODE": "CEP inválido"
+        "FULL_NAME_REQUIRED": "Full name is required",
+        "MILITARY_NAME_REQUIRED": "Military name is required",
+        "INVALID_SSN": "Invalid SSN (numbers only)",
+        "MOTHER_NAME_REQUIRED": "Mother's name is required",
+        "REGISTRATION_NUMBER_REQUIRED": "Registration number is required",
+        "INVALID_ZIP_CODE": "Invalid Zip Code"
     },
     "ALERTS": {
-        "FILL_REQUIRED": "Por favor, preencha todos os campos obrigatórios."
+        "FILL_REQUIRED": "Please fill in all required fields."
+    },
+    "MESSAGES": {
+        "DATA_SAVED_SUCCESS": "Data saved successfully!"
     }
 }

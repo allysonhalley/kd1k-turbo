@@ -1,4 +1,5 @@
 // src/app/models/military.model.ts
+import { MilitaryRankDTO } from './dto/military-rank.dto';
 
 export interface Dependent {
   name: string;
@@ -170,4 +171,65 @@ export interface MilitaryFormData {
   measurements: Measurements;
   contact: Contact;
   dependents: Dependent[];
+}
+
+// DTO Mappings
+export type MilitaryIdentityDTO = MilitaryIdentity;
+export type ServiceHistoryDTO = MilitaryHistory;
+export type ParentsDTO = Family;
+export type EducationDTO = Education;
+export type AddressDTO = Address;
+export type BankInfoDTO = BankDetails;
+export type VoterInfoDTO = VoterRegistration;
+export type DriversLicenseDTO = DriversLicense;
+export type BoatLicenseDTO = BoatLicense;
+export type FirearmDTO = Firearm;
+export type ContactInfoDTO = Contact;
+export type DependentDTO = Dependent;
+export type QualificationDTO = Qualifications;
+export type WorkLocationDTO = Assignment;
+
+export interface MilitaryPeopleDTO {
+  id: number;
+  fullName: string;
+  warName: string;
+  cpf: string;
+  birthDate: string;
+  birthMonth: number;
+  maritalStatus: string;
+  gender: string;
+  religion: string;
+  bloodType: string;
+  rhFactor: string;
+  headSize: string;
+  shoeSize: string;
+  bootSize: string;
+  shirtSize: string;
+  pantsSize: string;
+  shortsSize: string;
+  swimwearSize: string;
+  swimTrunksSize: string;
+  organDonor: boolean;
+  bloodDonor: boolean;
+  casMember: boolean;
+  sismepeUser: boolean;
+  hasAccidentCertificate: boolean;
+  hasChronicDisease: boolean;
+  controlledMedication: boolean;
+  hasAllergies: boolean;
+  rank: MilitaryRankDTO;
+  militaryIdentity: MilitaryIdentityDTO | null;
+  serviceHistory: ServiceHistoryDTO | null;
+  parents: ParentsDTO | null;
+  education: EducationDTO | null;
+  address: AddressDTO | null;
+  bankInfo: BankInfoDTO | null;
+  voterInfo: VoterInfoDTO | null;
+  driversLicense: DriversLicenseDTO | null;
+  boatLicense: BoatLicenseDTO | null;
+  firearms: FirearmDTO[] | null;
+  contactInfo: ContactInfoDTO | null;
+  dependents: DependentDTO[] | null;
+  qualifications: QualificationDTO[] | null;
+  workLocation: WorkLocationDTO | null;
 }

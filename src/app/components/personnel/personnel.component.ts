@@ -47,7 +47,7 @@ export class PersonnelComponent implements OnInit {
       personalData: this.fb.group({
         fullName: ['', Validators.required],
         militaryName: ['', Validators.required],
-        ssn: ['', [Validators.required, Validators.pattern(/^\d{9}$/)]],
+        ssn: ['', [Validators.required, Validators.pattern(/^\d{11}$/)]],
         birthDate: [''],
         birthMonth: [''],
         maritalStatus: [''],

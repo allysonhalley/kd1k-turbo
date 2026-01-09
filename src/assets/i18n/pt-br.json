@@ -12,7 +12,8 @@
     },
     "BUTTONS": {
         "CLEAR": "Limpar",
-        "SUBMIT": "Salvar"
+        "SUBMIT": "Salvar",
+        "ADD_DEPENDENT": "Adicionar Dependente"
     },
     "PERSONNEL": {
         "PERSONAL_DATA": {
@@ -185,5 +186,8 @@
     },
     "ALERTS": {
         "FILL_REQUIRED": "Por favor, preencha todos os campos obrigatórios."
+    },
+    "MESSAGES": {
+        "DATA_SAVED_SUCCESS": "Dados salvos com sucesso!"
     }
 }

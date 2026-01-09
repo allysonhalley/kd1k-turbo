@@ -3,8 +3,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
-import { MilitaryFormData } from '../models/military.model';
-import {MilitaryRankDTO} from "../models/dto/military-rank.dto";
+import { MilitaryFormData, MilitaryPeopleDTO } from '../models/military.model';
+import { MilitaryRankDTO } from "../models/dto/military-rank.dto";
+
+import { TranslateService } from '@ngx-translate/core';
 
 @Injectable({
   providedIn: 'root'
@@ -12,10 +14,10 @@ import {MilitaryRankDTO} from "../models/dto/military-rank.dto";
 export class MilitaryService {
   // In production, replace with real API URL
   private apiBaseUrl = 'api/v1';
-  private apiMilitaryUrl = this.apiBaseUrl+'/people';
+  private apiMilitaryUrl = this.apiBaseUrl + '/people';
   private apiRankUrl = this.apiBaseUrl + '/ranks';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private translate: TranslateService) { }
 
   /**
    * Saves military personnel data to the backend
@@ -26,20 +28,25 @@ export class MilitaryService {
 
     // Success simulation for demonstration (remove in production)
     console.log('Data sent:', data);
-    return of({ success: true, message: 'Data saved successfully!' });
+    return of({ success: true, message: this.translate.instant('MESSAGES.DATA_SAVED_SUCCESS') });
   }
 
   /**
-   * Gets the list of US states
+   * Gets the list of Brazilian states
    */
   getStates(): string[] {
     return [
-      'AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA',
-      'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD',
-      'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ',
-      'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC',
-      'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY'
+      'AC', 'AL', 'AP', 'AM', 'BA', 'CE', 'DF', 'ES', 'GO', 'MA',
+      'MT', 'MS', 'MG', 'PA', 'PB', 'PR', 'PE', 'PI', 'RJ', 'RN',
+      'RS', 'RO', 'RR', 'SC', 'SP', 'SE', 'TO'
     ];
+  }
+
+  /**
+   * Gets the list of military people
+   */
+  getPeople(): Observable<MilitaryPeopleDTO[]> {
+    return this.http.get<MilitaryPeopleDTO[]>(this.apiMilitaryUrl);
   }
 
   /**
@@ -54,10 +61,10 @@ export class MilitaryService {
    */
   getEducationLevels(): string[] {
     return [
-      'Incomplete Elementary School', 'Complete Elementary School',
-      'Incomplete High School', 'Complete High School',
-      'Incomplete College', 'Complete College',
-      'Post-graduate', 'Master\'s Degree', 'Doctorate'
+      'Ensino Fundamental Incompleto', 'Ensino Fundamental Completo',
+      'Ensino Médio Incompleto', 'Ensino Médio Completo',
+      'Ensino Superior Incompleto', 'Ensino Superior Completo',
+      'Pós-Graduação', 'Mestrado', 'Doutorado'
     ];
   }
 
@@ -66,7 +73,7 @@ export class MilitaryService {
    */
   getMaritalStatuses(): string[] {
     return [
-      'Single', 'Married', 'Divorced', 'Widowed', 'Domestic Partnership'
+      'Solteiro', 'Casado', 'Divorciado', 'Viúvo', 'União Estável'
     ];
   }
 }
